@@ -39,13 +39,14 @@ interval();
 
 // prompt
 function prompts(){
-  count = 0;
+  var count = 0;
   var promptArr = [];
   for (var i = 0; i < 5; i++) {
     var promptNum = parseInt(prompt('Inserisci i cinque numeri che hai visto precendentemente, uno alla volta: '));
     if (randomArr.includes(promptNum)) {
       promptArr.push(promptNum);
       count++;
+
     }
   }
   var howMany = document.getElementById('quantinumeri');
@@ -54,8 +55,6 @@ function prompts(){
     var numGuessed = document.getElementById('numerindovinati');
     numGuessed.innerHTML = 'I numeri indovinati sono i seguenti: ' + promptArr;
   }
-
-
   // console.log('I numeri indovinati sono i seguenti: ', promptArr, 'Numeri indovinati: ',count );
 
 }

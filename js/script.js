@@ -34,7 +34,7 @@ var clock;
 function tick(){
 
   document.getElementById('title').innerHTML = time++;
-  if(time > 2){
+  if(time > 30){
     clearInterval(clock);
     prompts();
   }

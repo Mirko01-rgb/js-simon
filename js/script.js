@@ -4,6 +4,14 @@
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
 
+var button = document.getElementById('mybutton');
+button.addEventListener('click',
+function(){
+
+ alerts();
+ interval();
+})
+
 //Function alerts()
 function alerts(){
   numMax = 100;
@@ -18,14 +26,15 @@ function alerts(){
   console.log('array:', randomArr);
   alert(randomArr);
 }
-alerts();
+// alerts();
 
 //Function timer 30 secondi
 var time;
 var clock;
 function tick(){
+
   document.getElementById('title').innerHTML = time++;
-  if(time > 30){
+  if(time > 2){
     clearInterval(clock);
     prompts();
   }
@@ -36,10 +45,10 @@ function interval(){
   time = 1;           //function
   clock = setInterval(   tick,         1000);
 }
-interval();
+// interval();
 
 
-// prompt
+// Function prompt
 function prompts(){
   var count = 0;
   var promptArr = [];
@@ -48,7 +57,7 @@ function prompts(){
     if (randomArr.includes(promptNum)) {
       promptArr.push(promptNum);
       count++;
-     }
+    }
 
   }
   var howMany = document.getElementById('quantinumeri');

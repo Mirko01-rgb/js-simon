@@ -11,7 +11,9 @@ function alerts(){
   randomArr = [];
   for (var i = 0; i < 5; i++) {
     var numRandom = (Math.floor(Math.random() * numMax + numMin));
-    randomArr.push(numRandom);
+    if (!randomArr.includes(numRandom)){
+      randomArr.push(numRandom);
+    }
   }
   console.log('array:', randomArr);
   alert(randomArr);
@@ -41,13 +43,13 @@ interval();
 function prompts(){
   var count = 0;
   var promptArr = [];
-  for (var i = 0; i < 5; i++) {
+  for (var j = 0; j < 5; j++) {
     var promptNum = parseInt(prompt('Inserisci i cinque numeri che hai visto precendentemente, uno alla volta: '));
     if (randomArr.includes(promptNum)) {
       promptArr.push(promptNum);
       count++;
+     }
 
-    }
   }
   var howMany = document.getElementById('quantinumeri');
   howMany.innerHTML = 'Su 5 numeri mostrati, hai indovinato ' + count + ' numeri';
